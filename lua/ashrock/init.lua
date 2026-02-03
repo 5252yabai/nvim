@@ -4,8 +4,8 @@ require("ashrock.remap")
 require("ashrock.autosync")
 require("ashrock.bufonly")
 
--- vim.cmd("colorscheme tokyonight-night")
-vim.cmd("colorscheme zenbones")
+vim.cmd("colorscheme tokyonight-night")
+-- vim.cmd("colorscheme zenbones")
 
 local autocmd = vim.api.nvim_create_autocmd
 autocmd('LspAttach', {

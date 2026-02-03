@@ -105,12 +105,5 @@ vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
 -- Oil Project View
 vim.keymap.set({ "n" }, "-", "<CMD>Oil<CR>", { noremap = true, silent = true, buffer = false })
--- override vimwiki keybinding
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "vimwiki",
-  callback = function()
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { noremap = true, silent = true, buffer = true })
-  end
-})
 
 vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, { desc = "Quick fix / Code actions" })

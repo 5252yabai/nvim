@@ -22,7 +22,14 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
+        {
+          name = 'nvim_lsp',
+          option = {
+            markdown_oxide = {
+              keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
+            }
+          }
+        },
         { name = 'md_frontmatter' },
       }, {
         { name = 'buffer' },

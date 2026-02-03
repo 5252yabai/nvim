@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "ts_ls" },
+        ensure_installed = { "ts_ls", "markdown_oxide" },
         automatic_installation = true
       })
     end
@@ -28,6 +28,7 @@ return {
             capabilities = capabilities
           })
         end,
+        ["omnisharp"] = function() end,
         ["ts_ls"] = function()
           require("lspconfig").ts_ls.setup({
             root_dir = require("lspconfig").util.root_pattern({ "package.json", "tsconfig.json" }),
@@ -53,6 +54,22 @@ return {
                 }
               }
             }
+          })
+        end,
+        ["markdown_oxide"] = function()
+          local oxide_capabilities = vim.tbl_deep_extend(
+            'force',
+            capabilities,
+            {
+              workspace = {
+                didChangeWatchedFiles = {
+                  dynamicRegistration = true,
+                },
+              },
+            }
+          )
+          require("lspconfig").markdown_oxide.setup({
+            capabilities = oxide_capabilities,
           })
         end,
       })

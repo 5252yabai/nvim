@@ -61,7 +61,7 @@ local function open_random_file_in_dir()
   math.randomseed(os.time())
   local idx = math.random(#files)
   local file = files[idx]
-  vim.cmd('edit ' .. file)
+  vim.cmd.edit(vim.fn.fnameescape(file))
 end
 vim.keymap.set('n', '<leader>r', open_random_file_in_dir)
 

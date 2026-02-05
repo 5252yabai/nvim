@@ -1,0 +1,85 @@
+
+
+n  <Space>.    * <Lua 307: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/lsp/buf.lua:830>
+                 Quick fix / Code actions
+n  <Space>r    * <Lua 306: ~/.config/nvim/lua/ashrock/remap.lua:54>
+n  <Space>fn   * <Lua 305: ~/.config/nvim/lua/ashrock/remap.lua:49>
+n  <Space>e    * <Lua 304: ~/.config/nvim/lua/ashrock/remap.lua:44>
+n  <Space>pr   * <Lua 301: ~/.config/nvim/lua/ashrock/remap.lua:23>
+n  <Space>gs   * <Lua 26: ~/.config/nvim/lua/ashrock/remap.lua:17>
+n  <Space>y    * "+y
+n  <Space>u    * <Lua 262: vim/_editor.lua:0>
+n  <Space>p      <Plug>(Prettier)
+n  <Space>ps   * <Lua 48: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+n  <Space>pf   * <Lua 47: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Telescope find files
+n  <Space>5    * <Lua 42: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 5
+n  <Space>4    * <Lua 41: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 4
+n  <Space>3    * <Lua 40: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 3
+n  <Space>2    * <Lua 39: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 2
+n  <Space>1    * <Lua 38: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 1
+n  <Space>a    * <Lua 37: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon add file
+n  <Space>8    * <Lua 33: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 8
+n  <Space>7    * <Lua 32: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 7
+n  <Space>6    * <Lua 31: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon file 6
+n  %             <Plug>(MatchitNormalForward)
+n  &           * :&&<CR>
+                 :help &-default
+n  -           * <Cmd>Oil<CR>
+n  Y           * y$
+                 :help Y-default
+n  [q          * <Cmd>cprev<CR>zz
+n  [%            <Plug>(MatchitNormalMultiBackward)
+n  [d          * <Lua 15: vim/_defaults.lua:0>
+                 Jump to the previous diagnostic
+n  ]q          * <Cmd>cnext<CR>zz
+n  ]%            <Plug>(MatchitNormalMultiForward)
+n  ]d          * <Lua 14: vim/_defaults.lua:0>
+                 Jump to the next diagnostic
+n  gl          * <Cmd>diffget //3<CR>
+n  gh          * <Cmd>diffget //2<CR>
+n  g%            <Plug>(MatchitNormalBackward)
+n  gcc         * <Lua 12: vim/_defaults.lua:0>
+                 Toggle comment line
+n  gc          * <Lua 10: vim/_defaults.lua:0>
+                 Toggle comment
+n  gx          * <Lua 8: vim/_defaults.lua:0>
+                 Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+n  <Plug>(PrettierCliPath) * :PrettierCliPath<CR>
+n  <Plug>(PrettierCliVersion) * :PrettierCliVersion<CR>
+n  <Plug>(PrettierCli) * :PrettierCli<CR>
+n  <Plug>(PrettierVersion) * :PrettierVersion<CR>
+n  <Plug>(PrettierPartial) * :PrettierPartial<CR>
+n  <Plug>(PrettierFragment) * :PrettierFragment<CR>
+n  <Plug>(PrettierAsync) * :PrettierAsync<CR>
+n  <Plug>(Prettier) * :Prettier<CR>
+n  <Plug>fugitive: & <Nop>
+n  <Plug>fugitive:y<C-G> & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+n  <C-P>       * <Lua 45: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Telescope find git files
+n  <C-E>       * <Lua 36: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon toggle menu
+n  <C-S-N>     * <Lua 35: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon next
+n  <C-S-P>     * <Lua 34: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+                 Harpoon previous
+n  <C-W><C-D>    <C-W>d
+                 Show diagnostics under the cursor
+n  <C-W>d      * <Lua 16: vim/_defaults.lua:0>
+                 Show diagnostics under the cursor
+n  <C-L>       * <Cmd>nohlsearch|diffupdate|normal! <C-L><CR>
+                 :help CTRL-L-default

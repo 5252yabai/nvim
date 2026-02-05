@@ -1,0 +1,392 @@
+{ {
+    _log_prefix = "LSP[lua_ls]",
+    _on_attach_cbs = { <function 1> },
+    _on_exit_cbs = { <function 2>, <function 3> },
+    _on_init_cbs = { <function 4> },
+    _trace = "off",
+    attached_buffers = { true },
+    cancel_request = <function 5>,
+    capabilities = <1>{
+      general = {
+        positionEncodings = { "utf-16" }
+      },
+      textDocument = {
+        callHierarchy = {
+          dynamicRegistration = false
+        },
+        codeAction = {
+          codeActionLiteralSupport = {
+            codeActionKind = {
+              valueSet = { "", "quickfix", "refactor", "refactor.extract", "refactor.inline", "refactor.rewrite", "source", "source.organizeImports" }
+            }
+          },
+          dataSupport = true,
+          dynamicRegistration = true,
+          isPreferredSupport = true,
+          resolveSupport = {
+            properties = { "edit" }
+          }
+        },
+        completion = {
+          completionItem = {
+            commitCharactersSupport = true,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1, 2 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = true,
+            resolveSupport = {
+              properties = { "documentation", "detail", "additionalTextEdits", "sortText", "filterText", "insertText", "textEdit", "insertTextFormat", "insertTextMode" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionItemKind = {
+            valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          dynamicRegistration = false,
+          insertTextMode = 1
+        },
+        declaration = {
+          linkSupport = true
+        },
+        definition = {
+          dynamicRegistration = true,
+          linkSupport = true
+        },
+        diagnostic = {
+          dynamicRegistration = false
+        },
+        documentHighlight = {
+          dynamicRegistration = false
+        },
+        documentSymbol = {
+          dynamicRegistration = false,
+          hierarchicalDocumentSymbolSupport = true,
+          symbolKind = {
+            valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 }
+          }
+        },
+        formatting = {
+          dynamicRegistration = true
+        },
+        hover = {
+          contentFormat = { "markdown", "plaintext" },
+          dynamicRegistration = true
+        },
+        implementation = {
+          linkSupport = true
+        },
+        inlayHint = {
+          dynamicRegistration = true,
+          resolveSupport = {
+            properties = { "textEdits", "tooltip", "location", "command" }
+          }
+        },
+        publishDiagnostics = {
+          dataSupport = true,
+          relatedInformation = true,
+          tagSupport = {
+            valueSet = { 1, 2 }
+          }
+        },
+        rangeFormatting = {
+          dynamicRegistration = true
+        },
+        references = {
+          dynamicRegistration = false
+        },
+        rename = {
+          dynamicRegistration = true,
+          prepareSupport = true
+        },
+        semanticTokens = {
+          augmentsSyntaxTokens = true,
+          dynamicRegistration = false,
+          formats = { "relative" },
+          multilineTokenSupport = false,
+          overlappingTokenSupport = true,
+          requests = {
+            full = {
+              delta = true
+            },
+            range = false
+          },
+          serverCancelSupport = false,
+          tokenModifiers = { "declaration", "definition", "readonly", "static", "deprecated", "abstract", "async", "modification", "documentation", "defaultLibrary" },
+          tokenTypes = { "namespace", "type", "class", "enum", "interface", "struct", "typeParameter", "parameter", "variable", "property", "enumMember", "event", "function", "method", "macro", "keyword", "modifier", "comment", "string", "number", "regexp", "operator", "decorator" }
+        },
+        signatureHelp = {
+          dynamicRegistration = false,
+          signatureInformation = {
+            activeParameterSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            parameterInformation = {
+              labelOffsetSupport = true
+            }
+          }
+        },
+        synchronization = {
+          didSave = true,
+          dynamicRegistration = false,
+          willSave = true,
+          willSaveWaitUntil = true
+        },
+        typeDefinition = {
+          linkSupport = true
+        }
+      },
+      window = {
+        showDocument = {
+          support = true
+        },
+        showMessage = {
+          messageActionItem = {
+            additionalPropertiesSupport = false
+          }
+        },
+        workDoneProgress = true
+      },
+      workspace = {
+        applyEdit = true,
+        configuration = true,
+        didChangeConfiguration = {
+          dynamicRegistration = false
+        },
+        didChangeWatchedFiles = {
+          dynamicRegistration = true,
+          relativePatternSupport = true
+        },
+        inlayHint = {
+          refreshSupport = true
+        },
+        semanticTokens = {
+          refreshSupport = true
+        },
+        symbol = {
+          dynamicRegistration = false,
+          symbolKind = {
+            valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 }
+          }
+        },
+        workspaceEdit = {
+          resourceOperations = { "rename", "create", "delete" }
+        },
+        workspaceFolders = true
+      }
+    },
+    commands = {},
+    config = {
+      autostart = true,
+      capabilities = <table 1>,
+      cmd = { "/Users/leejaeseok/.local/share/nvim/mason/bin/lua-language-server" },
+      filetypes = { "lua" },
+      handlers = <2>{},
+      init_options = vim.empty_dict(),
+      log_level = 2,
+      message_level = 2,
+      name = "lua_ls",
+      on_attach = <function 1>,
+      on_exit = <function 2>,
+      on_init = <function 4>,
+      root_dir = "",
+      settings = <3>{
+        Lua = {
+          diagnostics = {
+            globals = { "vim", "it", "describe", "before_each", "after_each" }
+          },
+          runtime = {
+            version = "LuaJIT"
+          }
+        }
+      },
+      single_file_support = true,
+      workspace_folders = <4>{ {
+          name = "",
+          uri = "file://"
+        } },
+      <metatable> = <5>{
+        __tostring = <function 6>
+      }
+    },
+    dynamic_capabilities = {
+      capabilities = {},
+      client_id = 1,
+      <metatable> = {
+        __index = {
+          get = <function 7>,
+          match = <function 8>,
+          new = <function 9>,
+          register = <function 10>,
+          supports = <function 11>,
+          supports_registration = <function 12>,
+          unregister = <function 13>
+        }
+      }
+    },
+    flags = {},
+    get_language_id = <function 14>,
+    handlers = <table 2>,
+    id = 1,
+    initialized = true,
+    is_stopped = <function 15>,
+    messages = {
+      messages = {},
+      name = "lua_ls",
+      progress = {},
+      status = {}
+    },
+    name = "lua_ls",
+    notify = <function 16>,
+    offset_encoding = "utf-16",
+    on_attach = <function 17>,
+    progress = {
+      _idx_read = 0,
+      _idx_write = 0,
+      _items = {},
+      _size = 51,
+      pending = {},
+      <metatable> = {
+        __call = <function 18>,
+        __index = {
+          clear = <function 19>,
+          peek = <function 20>,
+          pop = <function 21>,
+          push = <function 22>
+        }
+      }
+    },
+    request = <function 23>,
+    request_sync = <function 24>,
+    requests = {
+      [3] = {
+        bufnr = 1,
+        method = "textDocument/semanticTokens/full",
+        type = "cancel"
+      },
+      [7] = {
+        bufnr = 1,
+        method = "textDocument/semanticTokens/full",
+        type = "cancel"
+      }
+    },
+    root_dir = "",
+    rpc = {
+      is_closing = <function 25>,
+      notify = <function 26>,
+      request = <function 27>,
+      terminate = <function 28>
+    },
+    server_capabilities = {
+      codeActionProvider = {
+        codeActionKinds = { "", "quickfix", "refactor.rewrite", "refactor.extract" },
+        resolveProvider = false
+      },
+      codeLensProvider = {
+        resolveProvider = true
+      },
+      colorProvider = true,
+      completionProvider = {
+        resolveProvider = true,
+        triggerCharacters = { "\t", "\n", ".", ":", "(", "'", '"', "[", ",", "#", "*", "@", "|", "=", "-", "{", " ", "+", "?" }
+      },
+      definitionProvider = true,
+      documentFormattingProvider = true,
+      documentHighlightProvider = true,
+      documentOnTypeFormattingProvider = {
+        firstTriggerCharacter = "\n"
+      },
+      documentRangeFormattingProvider = true,
+      documentSymbolProvider = true,
+      executeCommandProvider = {
+        commands = { "lua.removeSpace", "lua.solve", "lua.jsonToLua", "lua.setConfig", "lua.getConfig", "lua.autoRequire" }
+      },
+      foldingRangeProvider = true,
+      hoverProvider = true,
+      implementationProvider = true,
+      inlayHintProvider = {
+        resolveProvider = true
+      },
+      offsetEncoding = "utf-16",
+      referencesProvider = true,
+      renameProvider = {
+        prepareProvider = true
+      },
+      semanticTokensProvider = {
+        full = true,
+        legend = {
+          tokenModifiers = { "declaration", "definition", "readonly", "static", "deprecated", "abstract", "async", "modification", "documentation", "defaultLibrary", "global" },
+          tokenTypes = { "namespace", "type", "class", "enum", "interface", "struct", "typeParameter", "parameter", "variable", "property", "enumMember", "event", "function", "method", "macro", "keyword", "modifier", "comment", "string", "number", "regexp", "operator", "decorator" }
+        },
+        range = true
+      },
+      signatureHelpProvider = {
+        triggerCharacters = { "(", "," }
+      },
+      textDocumentSync = {
+        change = 2,
+        openClose = true,
+        save = {
+          includeText = false
+        }
+      },
+      typeDefinitionProvider = true,
+      workspace = {
+        fileOperations = {
+          didRename = {
+            filters = { {
+                pattern = {
+                  glob = "/**",
+                  options = {
+                    ignoreCase = true
+                  }
+                }
+              } }
+          }
+        },
+        workspaceFolders = {
+          changeNotifications = true,
+          supported = true
+        }
+      },
+      workspaceSymbolProvider = true
+    },
+    settings = <table 3>,
+    stop = <function 29>,
+    supports_method = <function 30>,
+    workspace_did_change_configuration = <function 31>,
+    workspace_folders = <table 4>,
+    <metatable> = <6>{
+      __index = <table 6>,
+      _add_workspace_folder = <function 32>,
+      _cancel_request = <function 33>,
+      _exec_cmd = <function 34>,
+      _is_stopped = <function 35>,
+      _notification = <function 36>,
+      _notify = <function 37>,
+      _on_attach = <function 38>,
+      _on_error = <function 39>,
+      _on_exit = <function 40>,
+      _remove_workspace_folder = <function 41>,
+      _request = <function 42>,
+      _request_sync = <function 43>,
+      _resolve_handler = <function 44>,
+      _run_callbacks = <function 45>,
+      _server_request = <function 46>,
+      _stop = <function 47>,
+      _supports_method = <function 48>,
+      _text_document_did_open_handler = <function 49>,
+      create = <function 50>,
+      initialize = <function 51>,
+      write_error = <function 52>
+    }
+  } }

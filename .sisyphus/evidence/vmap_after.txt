@@ -1,0 +1,27 @@
+
+
+v  <Space>y    * "+y
+x  #           * <Lua 7: vim/_defaults.lua:0>
+                 :help v_#-default
+x  %             <Plug>(MatchitVisualForward)
+x  *           * <Lua 3: vim/_defaults.lua:0>
+                 :help v_star-default
+x  @           * mode() ==# 'V' ? ':normal! @'.getcharstr().'<CR>' : '@'
+                 :help v_@-default
+v  J           * :m '>+1<CR>gv=gv
+v  K           * :m '<-2<CR>gv=gv
+x  Q           * mode() ==# 'V' ? ':normal! @<C-R>=reg_recorded()<CR><CR>' : 'Q'
+                 :help v_Q-default
+x  [%            <Plug>(MatchitVisualMultiBackward)
+x  ]%            <Plug>(MatchitVisualMultiForward)
+x  a%            <Plug>(MatchitVisualTextObject)
+x  g%            <Plug>(MatchitVisualBackward)
+x  gc          * <Lua 11: vim/_defaults.lua:0>
+                 Toggle comment
+x  gx          * <Lua 9: vim/_defaults.lua:0>
+                 Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+x  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+x  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+x  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+x  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>:if col("''") != col("$") | exe ":normal! m'" | endif<CR>gv``

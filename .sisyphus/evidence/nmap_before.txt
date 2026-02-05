@@ -1,0 +1,133 @@
+
+
+n  <Space>.    * <Lua 271: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/lsp/buf.lua:830>
+                 Quick fix / Code actions
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>8    * <Lua 256: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>7    * <Lua 255: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>6    * <Lua 254: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>5    * <Lua 252: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>4    * <Lua 251: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>3    * <Lua 248: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>2    * <Lua 246: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>1    * <Lua 240: ~/.config/nvim/lua/ashrock/remap.lua:99>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>a    * <Lua 205: ~/.config/nvim/lua/ashrock/remap.lua:94>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>ps   * <Lua 199: ~/.config/nvim/lua/ashrock/remap.lua:75>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>pf   * <Lua 198: ~/.config/nvim/lua/ashrock/remap.lua:71>
+                 Telescope find files
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>r    * <Lua 227: ~/.config/nvim/lua/ashrock/remap.lua:55>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>fn   * <Lua 226: ~/.config/nvim/lua/ashrock/remap.lua:50>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>e    * <Lua 220: ~/.config/nvim/lua/ashrock/remap.lua:45>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>pr   * <Lua 219: ~/.config/nvim/lua/ashrock/remap.lua:23>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>gs   * <Lua 208: ~/.config/nvim/lua/ashrock/remap.lua:17>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>y    * "+y
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Space>p      <Plug>(Prettier)
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 166
+n  <Space>u    * <Lua 221: vim/_editor.lua:0>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  %             <Plug>(MatchitNormalForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 70
+n  &           * :&&<CR>
+                 :help &-default
+	Last set from Lua (run Nvim with -V1 for more details)
+n  -           * <Cmd>Oil<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  Y           * y$
+                 :help Y-default
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [q          * <Cmd>cprev<CR>zz
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [%            <Plug>(MatchitNormalMultiBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 78
+n  [d          * <Lua 15: vim/_defaults.lua:0>
+                 Jump to the previous diagnostic
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]q          * <Cmd>cnext<CR>zz
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]%            <Plug>(MatchitNormalMultiForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 79
+n  ]d          * <Lua 14: vim/_defaults.lua:0>
+                 Jump to the next diagnostic
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gl          * <Cmd>diffget //3<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gh          * <Cmd>diffget //2<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  g%            <Plug>(MatchitNormalBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 71
+n  gcc         * <Lua 12: vim/_defaults.lua:0>
+                 Toggle comment line
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gc          * <Lua 10: vim/_defaults.lua:0>
+                 Toggle comment
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gx          * <Lua 8: vim/_defaults.lua:0>
+                 Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+	Last set from Lua (run Nvim with -V1 for more details)
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-fugitive/plugin/fugitive.vim line 749
+n  <C-S-N>     * <Lua 29: ~/.config/nvim/lua/ashrock/remap.lua:104>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-S-P>     * <Lua 257: ~/.config/nvim/lua/ashrock/remap.lua:103>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-E>       * <Lua 239: ~/.config/nvim/lua/ashrock/remap.lua:95>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-P>       * <Lua 203: ~/.config/nvim/lua/ashrock/remap.lua:79>
+                 Telescope find git files
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 60
+n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 59
+n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 51
+n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 50
+n  <Plug>(PrettierCliPath) * :PrettierCliPath<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 175
+n  <Plug>(PrettierCliVersion) * :PrettierCliVersion<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 174
+n  <Plug>(PrettierCli) * :PrettierCli<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 173
+n  <Plug>(PrettierVersion) * :PrettierVersion<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 172
+n  <Plug>(PrettierPartial) * :PrettierPartial<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 171
+n  <Plug>(PrettierFragment) * :PrettierFragment<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 170
+n  <Plug>(PrettierAsync) * :PrettierAsync<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 169
+n  <Plug>(Prettier) * :Prettier<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-prettier/plugin/prettier.vim line 168
+n  <Plug>fugitive: & <Nop>
+	Last set from ~/.local/share/nvim/lazy/vim-fugitive/plugin/fugitive.vim line 724
+n  <Plug>fugitive:y<C-G> & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-fugitive/plugin/fugitive.vim line 723
+n  <Plug>PlenaryTestFile * :lua require('plenary.test_harness').test_file(vim.fn.expand("%:p"))<CR>
+	Last set from ~/.local/share/nvim/lazy/plenary.nvim/plugin/plenary.vim line 9
+n  <C-W><C-D>    <C-W>d
+                 Show diagnostics under the cursor
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-W>d      * <Lua 16: vim/_defaults.lua:0>
+                 Show diagnostics under the cursor
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-L>       * <Cmd>nohlsearch|diffupdate|normal! <C-L><CR>
+                 :help CTRL-L-default
+	Last set from Lua (run Nvim with -V1 for more details)

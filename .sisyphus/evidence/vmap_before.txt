@@ -1,0 +1,46 @@
+
+
+v  <Space>y    * "+y
+	Last set from Lua (run Nvim with -V1 for more details)
+x  #           * <Lua 7: vim/_defaults.lua:0>
+                 :help v_#-default
+	Last set from Lua (run Nvim with -V1 for more details)
+x  %             <Plug>(MatchitVisualForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 72
+x  *           * <Lua 3: vim/_defaults.lua:0>
+                 :help v_star-default
+	Last set from Lua (run Nvim with -V1 for more details)
+x  @           * mode() ==# 'V' ? ':normal! @'.getcharstr().'<CR>' : '@'
+                 :help v_@-default
+	Last set from Lua (run Nvim with -V1 for more details)
+v  J           * :m '>+1<CR>gv=gv
+	Last set from Lua (run Nvim with -V1 for more details)
+v  K           * :m '<-2<CR>gv=gv
+	Last set from Lua (run Nvim with -V1 for more details)
+x  Q           * mode() ==# 'V' ? ':normal! @<C-R>=reg_recorded()<CR><CR>' : 'Q'
+                 :help v_Q-default
+	Last set from Lua (run Nvim with -V1 for more details)
+x  [%            <Plug>(MatchitVisualMultiBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 80
+x  ]%            <Plug>(MatchitVisualMultiForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 81
+x  a%            <Plug>(MatchitVisualTextObject)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 86
+x  g%            <Plug>(MatchitVisualBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 73
+x  gc          * <Lua 11: vim/_defaults.lua:0>
+                 Toggle comment
+	Last set from Lua (run Nvim with -V1 for more details)
+x  gx          * <Lua 9: vim/_defaults.lua:0>
+                 Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+	Last set from Lua (run Nvim with -V1 for more details)
+x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 67
+x  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 62
+x  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 61
+x  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 54
+x  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>:if col("''") != col("$") | exe ":normal! m'" | endif<CR>gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 52

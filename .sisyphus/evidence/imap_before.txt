@@ -1,0 +1,8 @@
+
+
+i  <C-W>       * <C-G>u<C-W>
+                 :help i_CTRL-W-default
+	Last set from Lua (run Nvim with -V1 for more details)
+i  <C-U>       * <C-G>u<C-U>
+                 :help i_CTRL-U-default
+	Last set from Lua (run Nvim with -V1 for more details)

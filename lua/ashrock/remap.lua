@@ -51,7 +51,7 @@ vim.keymap.set('n', '<leader>fn', function()
 end, { noremap = true, silent = true })
 
 -- Random file opener
-local function OpenRandomFileInDir()
+local function open_random_file_in_dir()
   local output = vim.fn.system('ls -p | grep -v /')
   local files = vim.split(output, '\n')
   if #files == 0 then
@@ -63,7 +63,7 @@ local function OpenRandomFileInDir()
   local file = files[idx]
   vim.cmd('edit ' .. file)
 end
-vim.keymap.set('n', '<leader>r', OpenRandomFileInDir)
+vim.keymap.set('n', '<leader>r', open_random_file_in_dir)
 
 -- Oil Project View
 vim.keymap.set({ "n" }, "-", "<CMD>Oil<CR>", { noremap = true, silent = true, buffer = false })

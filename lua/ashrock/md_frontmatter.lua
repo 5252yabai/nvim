@@ -1,17 +1,18 @@
-local topics_cache = {
-  data = {},
-  last_update = 0
-}
+local config = require('ashrock.config')
 
-local objects_cache = {
-  data = {},
-  last_update = 0
-}
+local cache = {}
 
-local function get_all_topics()
+local function get_all(field_name)
+  if not cache[field_name] then
+    cache[field_name] = {
+      data = {},
+      last_update = 0
+    }
+  end
+
   local current_time = os.time()
-  if current_time - topics_cache.last_update > 300 then
-    local topics = {}
+  if current_time - cache[field_name].last_update > config.cache_timeout then
+    local items = {}
     local files = vim.fn.glob('**/*.md', false, true)
 
     for _, file in ipairs(files) do
@@ -21,49 +22,28 @@ local function get_all_topics()
       for _, line in ipairs(content) do
         if line == '---' then
           in_frontmatter = not in_frontmatter
-        elseif in_frontmatter and line:match('^topics:') then
-          local topic_list = line:gsub('topics:', ''):gsub('%s+', ''):gsub(',', '\n')
-          for topic in topic_list:gmatch('[^\n]+') do
-            topics[topic] = true
+        elseif in_frontmatter and line:match('^' .. field_name .. ':') then
+          local item_list = line:gsub(field_name .. ':', ''):gsub('%s+', ''):gsub(',', '\n')
+          for item in item_list:gmatch('[^\n]+') do
+            items[item] = true
           end
         end
       end
     end
 
-    topics_cache.data = vim.tbl_keys(topics)
-    topics_cache.last_update = current_time
+    cache[field_name].data = vim.tbl_keys(items)
+    cache[field_name].last_update = current_time
   end
 
-  return topics_cache.data
+  return cache[field_name].data
+end
+
+local function get_all_topics()
+  return get_all('topics')
 end
 
 local function get_all_objects()
-  local current_time = os.time()
-  if current_time - objects_cache.last_update > 300 then
-    local objects = {}
-    local files = vim.fn.glob('**/*.md', false, true)
-
-    for _, file in ipairs(files) do
-      local content = vim.fn.readfile(file)
-      local in_frontmatter = false
-
-      for _, line in ipairs(content) do
-        if line == '---' then
-          in_frontmatter = not in_frontmatter
-        elseif in_frontmatter and line:match('^objects:') then
-          local object_list = line:gsub('objects:', ''):gsub('%s+', ''):gsub(',', '\n')
-          for object in object_list:gmatch('[^\n]+') do
-            objects[object] = true
-          end
-        end
-      end
-    end
-
-    objects_cache.data = vim.tbl_keys(objects)
-    objects_cache.last_update = current_time
-  end
-
-  return objects_cache.data
+  return get_all('objects')
 end
 
 -- 자동완성 소스 설정
@@ -110,6 +90,7 @@ source.complete = function(self, params, callback)
 end
 
 return {
+  get_all = get_all,
   get_all_topics = get_all_topics,
   get_all_objects = get_all_objects,
   completion_source = source,

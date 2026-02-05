@@ -22,9 +22,8 @@ end)
 -- Code formatting function
 local function format_code()
   -- ESLint가 사용 가능한지 확인
-  local eslint_available = vim.fn.executable('eslint') == 1 or
-                          #vim.lsp.get_active_clients({ name = "eslint" }) > 0 or
-                          #vim.lsp.get_active_clients({ name = "eslintls" }) > 0
+  local utils = require('ashrock.utils')
+  local eslint_available = utils.is_eslint_available()
 
   if eslint_available then
     vim.cmd.EslintFixAll()

@@ -29,9 +29,8 @@ return {
       end
 
       -- ESLint가 사용 가능한지 확인하고 먼저 실행
-      local eslint_available = vim.fn.executable('eslint') == 1 or
-                              #vim.lsp.get_active_clients({ name = "eslint" }) > 0 or
-                              #vim.lsp.get_active_clients({ name = "eslintls" }) > 0
+      local utils = require('ashrock.utils')
+      local eslint_available = utils.is_eslint_available()
 
       if eslint_available then
         vim.cmd.EslintFixAll()

@@ -66,43 +66,6 @@ local function OpenRandomFileInDir()
 end
 vim.keymap.set('n', '<leader>r', OpenRandomFileInDir)
 
--- Telescope configuration
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', function()
-  builtin.find_files()
-end, { desc = 'Telescope find files' })
-
-vim.keymap.set('n', '<leader>ps', function()
-  builtin.live_grep()
-end)
-
-vim.keymap.set('n', '<C-p>', function()
-  builtin.git_files()
-end, { desc = 'Telescope find git files' })
-
--- Harpoon configuration
-local harpoon = require("harpoon")
-harpoon:setup()
-
-local toggle_opts = {
-  border = "rounded",
-  title_pos = "center",
-  ui_width_ratio = 1,
-}
-
--- Harpoon mappings
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts) end)
-
--- Harpoon file selection
-for i = 1, 8 do
-  vim.keymap.set("n", string.format("<leader>%d", i), function() harpoon:list():select(i) end)
-end
-
--- Harpoon navigation
-vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
-
 -- Oil Project View
 vim.keymap.set({ "n" }, "-", "<CMD>Oil<CR>", { noremap = true, silent = true, buffer = false })
 

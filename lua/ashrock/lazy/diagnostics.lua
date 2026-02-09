@@ -7,7 +7,7 @@ return {
       virtual_text = true,
       jump = { float = true },
       float = {
-        focusable = false,
+        focusable = true,
         style = "minimal",
         border = "rounded",
         source = true,

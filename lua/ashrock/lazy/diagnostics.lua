@@ -4,11 +4,12 @@ return {
     require("fidget").setup({})
     
     vim.diagnostic.config({
+      virtual_text = true,
       float = {
         focusable = false,
         style = "minimal",
         border = "rounded",
-        source = "always",
+        source = true,
         header = "",
         prefix = "",
       },

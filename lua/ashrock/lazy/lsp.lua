@@ -55,8 +55,7 @@ return {
           vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
           vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
           -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-          vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-          vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+
           if vim.lsp.get_client_by_id(e.data.client_id).server_capabilities.documentFormattingProvider then
             -- ESLint/Prettier 가용성 확인
             local has_eslint = utils.is_eslint_available()
@@ -90,6 +89,7 @@ return {
         ["omnisharp"] = function() end,
         ["ts_ls"] = function()
           require("lspconfig").ts_ls.setup({
+            capabilities = capabilities,
             root_dir = require("lspconfig").util.root_pattern({ "package.json", "tsconfig.json" }),
             single_file_support = false,
             settings = {},

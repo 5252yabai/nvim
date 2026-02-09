@@ -29,7 +29,7 @@ local function format_code()
 
   -- conform.nvim을 사용하여 포매팅 (Biome 또는 Prettier)
   require("conform").format({
-    lsp_fallback = true,
+    lsp_format = "fallback",
     async = true,
     timeout_ms = 500,
   })

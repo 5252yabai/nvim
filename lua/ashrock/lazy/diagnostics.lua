@@ -5,6 +5,7 @@ return {
     
     vim.diagnostic.config({
       virtual_text = true,
+      jump = { float = true },
       float = {
         focusable = false,
         style = "minimal",

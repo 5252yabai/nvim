@@ -1,19 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "main",
   build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter.configs").setup({
-      sync_install = false,
-      auto_install = true,
-
-      indent = {
-        enable = true
-      },
-      highlight = {
-        enable = true,
-        disable = { "astro" },
-        additional_vim_regex_highlighting = { 'markdown' },
-      },
-    })
+    require("nvim-treesitter").setup({})
   end
 }

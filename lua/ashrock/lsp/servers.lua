@@ -36,3 +36,5 @@ local servers = {
 for name, config in pairs(servers) do
   vim.lsp.config(name, config)
 end
+
+vim.lsp.enable(vim.tbl_keys(servers))

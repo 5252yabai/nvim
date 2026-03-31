@@ -19,6 +19,9 @@ end)
 
 -- Code formatting function
 local function format_code()
+  -- conform lazy load 대응
+  require("ashrock.plugins.conform").ensure()
+
   -- ESLint가 사용 가능한지 확인
   local utils = require('ashrock.utils')
   local eslint_available = utils.is_eslint_available()

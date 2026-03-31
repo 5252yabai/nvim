@@ -1,5 +1,5 @@
 require("ashrock.set")
-require("ashrock.lazy_init")
+require("ashrock.pack_init")
 require("ashrock.remap")
 -- require("ashrock.autosync")
 require("ashrock.bufonly")

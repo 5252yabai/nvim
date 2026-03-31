@@ -249,11 +249,6 @@
 (heredoc
   (body) @string)
 
-(heredoc
-  (parameter) @keyword)
-
-(script
-  (parameter) @keyword)
 
 [
   (marker_definition)
@@ -315,9 +310,6 @@
 
 (binary_operation
   "." @operator)
-
-(lua_statement
-  "=" @keyword)
 
 ; Punctuation
 [

@@ -39,9 +39,13 @@ local function get_all(field_name)
         if line == '---' then
           in_frontmatter = not in_frontmatter
         elseif in_frontmatter and line:match('^' .. field_name .. ':') then
-          local item_list = line:gsub(field_name .. ':', ''):gsub('%s+', ''):gsub(',', '\n')
-          for item in item_list:gmatch('[^\n]+') do
-            items[item] = true
+          local raw = line:gsub(field_name .. ':', '')
+          raw = raw:gsub('[%[%]"]', '')  -- YAML 배열 문법 제거
+          raw = raw:gsub('%s+', ''):gsub(',', '\n')
+          for item in raw:gmatch('[^\n]+') do
+            if item ~= '' then
+              items[item] = true
+            end
           end
         end
       end
@@ -83,7 +87,7 @@ source.complete = function(self, params, callback)
   if is_topics then
     local topics = get_all_topics()
     for _, topic in ipairs(topics) do
-      if vim.startswith(topic:lower(), line:match("[^,%s]*$"):lower()) then
+      if vim.startswith(topic:lower(), line:match('[^,%s%[%]"]*$'):lower()) then
         table.insert(items, {
           label = topic,
           kind = vim.lsp.protocol.CompletionItemKind.Text
@@ -93,7 +97,7 @@ source.complete = function(self, params, callback)
   elseif is_objects then
     local objects = get_all_objects()
     for _, object in ipairs(objects) do
-      if vim.startswith(object:lower(), line:match("[^,%s]*$"):lower()) then
+      if vim.startswith(object:lower(), line:match('[^,%s%[%]"]*$'):lower()) then
         table.insert(items, {
           label = object,
           kind = vim.lsp.protocol.CompletionItemKind.Text

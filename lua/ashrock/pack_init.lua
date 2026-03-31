@@ -43,7 +43,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 
   -- Deferred (lazy load)
-  { src = "https://github.com/nvim-telescope/telescope.nvim", version = "0.1.8", load = false },
+  { src = "https://github.com/nvim-telescope/telescope.nvim", version = "v0.2.2", load = false },
   { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2", load = false },
   { src = "https://github.com/stevearc/conform.nvim", load = false },
 })

@@ -10,26 +10,26 @@ return {
       -- 1. mason 먼저 setup
       require("mason").setup()
 
-      -- 2. lspconfig.setup()으로 각 서버 직접 설정 (cmd/filetypes 자동 포함)
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
+      -- 2. vim.lsp.config()로 각 서버 설정 (Neovim 0.12+ 네이티브 API)
       local utils = require("ashrock.utils")
       local config = require("ashrock.config")
 
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json"),
+      -- 글로벌 capabilities 설정
+      vim.lsp.config('*', {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      })
+
+      vim.lsp.config('ts_ls', {
+        root_markers = { "package.json", "tsconfig.json" },
         single_file_support = false,
       })
 
-      lspconfig.denols.setup({
-        capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+      vim.lsp.config('denols', {
+        root_markers = { "deno.json", "deno.jsonc" },
         single_file_support = false,
       })
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
+      vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
             runtime = { version = "LuaJIT" },
@@ -40,13 +40,15 @@ return {
         }
       })
 
-      lspconfig.markdown_oxide.setup({
-        capabilities = vim.tbl_deep_extend('force', capabilities, {
-          workspace = {
-            didChangeWatchedFiles = { dynamicRegistration = true },
-          },
-        }),
+      vim.lsp.config('markdown_oxide', {
+        capabilities = vim.tbl_deep_extend('force',
+          require("cmp_nvim_lsp").default_capabilities(),
+          { workspace = { didChangeWatchedFiles = { dynamicRegistration = true } } }
+        ),
       })
+
+      -- 서버 활성화
+      vim.lsp.enable({ 'ts_ls', 'denols', 'lua_ls', 'markdown_oxide' })
 
       -- 3. LspAttach autocmd (키맵, 포맷팅)
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -94,10 +96,10 @@ return {
         end
       })
 
-      -- 4. mason-lspconfig: 설치만 담당 (automatic_enable 비활성화)
+      -- 4. mason-lspconfig: 설치 및 자동 활성화
       require("mason-lspconfig").setup({
         ensure_installed = { "ts_ls", "markdown_oxide" },
-        automatic_enable = false,
+        automatic_enable = true,
       })
     end
   }
